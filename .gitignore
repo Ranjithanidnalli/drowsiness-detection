@@ -1,0 +1,42 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# ── Virtual environments ────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Auto-downloaded model weights (fetched on first run, no need to commit) ──
+# face_landmarker.task is downloaded by _ensure_model(); yolov8n.pt is
+# downloaded by ultralytics on first use. Remove these lines (or `git add -f`)
+# if you'd rather ship them in the repo for offline use.
+face_landmarker.task
+yolov8n.pt
+
+# ── Trained models & recorded data (large / regenerated) ──
+models/*.h5
+models/*.keras
+models/*.pkl
+models/*.pt
+data/*.csv
+
+# ── Runtime output ──────────────────────────────────────
+snapshots/
+logs/
+run_log.txt
+run_err.txt
+*.log
+
+# ── OS / editor / tooling ───────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+.claude/
