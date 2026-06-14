@@ -1,0 +1,46 @@
+:root{
+  --bg:#0b1020; --bg2:#121a30; --panel:#151d33; --line:#26314f;
+  --text:#e7ecf6; --muted:#8a97b5; --green:#25c685; --amber:#f3b53b;
+  --red:#ff4d5e; --blue:#5b8cff;
+}
+*{box-sizing:border-box} html,body{margin:0;height:100%}
+body{
+  background:radial-gradient(1100px 600px at 80% -10%,#16213f,#0b1020 55%);
+  color:var(--text); font-family:"Segoe UI",system-ui,-apple-system,Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+}
+.app{max-width:1000px;margin:0 auto;padding:18px}
+
+.topbar{display:flex;align-items:center;gap:13px}
+.brand{display:flex;align-items:center;gap:13px}
+.logo{font-size:28px;color:var(--blue);filter:drop-shadow(0 0 9px rgba(91,140,255,.6))}
+.brand h1{margin:0;font-size:21px}
+.brand p{margin:2px 0 0;color:var(--muted);font-size:12.5px}
+.pill{margin-left:auto;display:flex;align-items:center;gap:8px;background:var(--panel);
+  border:1px solid var(--line);padding:7px 13px;border-radius:20px;font-size:13px;font-weight:700}
+.pill .dot{width:9px;height:9px;border-radius:50%;background:var(--muted)}
+
+.stage{position:relative;width:100%;aspect-ratio:4/3;margin-top:14px;background:#05070f;
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.4)}
+#video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0}
+#canvas{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+
+.cover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  background:rgba(5,8,16,.82);backdrop-filter:blur(3px);text-align:center;padding:20px}
+.cover.hide{display:none}
+.card{max-width:430px}
+.card h2{margin:0 0 8px;font-size:20px}
+.card p{color:var(--muted);font-size:13.5px;line-height:1.55;margin:0 0 16px}
+.loadmsg{font-size:12.5px;color:var(--blue);min-height:18px;margin-top:12px}
+
+.controls{display:flex;flex-wrap:wrap;gap:9px;margin-top:13px;align-items:center}
+.btn{border:1px solid var(--line);background:var(--panel);color:var(--text);
+  padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;transition:.15s}
+.btn:hover:not(:disabled){border-color:var(--blue);transform:translateY(-1px)}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+.btn-primary{background:var(--blue);border-color:var(--blue);color:#fff;font-size:15px;padding:12px 22px}
+#muteBtn.off{color:var(--muted)}
+.switch{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);cursor:pointer}
+.switch input{accent-color:var(--blue);width:16px;height:16px}
+
+.foot{color:var(--muted);font-size:11.5px;margin-top:16px;text-align:center;line-height:1.6}

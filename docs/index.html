@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>DriveAwake — Driver Drowsiness Detection (in-browser)</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- TensorFlow.js + COCO-SSD for in-browser phone detection -->
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.22.0/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd@2.2.3/dist/coco-ssd.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo">◉</span>
+        <div>
+          <h1>DriveAwake</h1>
+          <p>Driver Drowsiness &amp; Distraction Detection — runs in <b>your</b> browser</p>
+        </div>
+      </div>
+      <div class="pill"><span class="dot" id="dot"></span><span id="status">IDLE</span></div>
+    </header>
+
+    <div class="stage" id="stage">
+      <video id="video" playsinline muted></video>
+      <canvas id="canvas"></canvas>
+
+      <div class="cover" id="cover">
+        <div class="card">
+          <h2>In-browser drowsiness detection</h2>
+          <p>Uses <b>this device's</b> camera. Everything — face mesh, eye/yawn/PERCLOS
+             analysis, and phone detection — runs <b>locally in your browser</b>.
+             No video is uploaded anywhere.</p>
+          <button id="startBtn" class="btn btn-primary">▶ Start camera</button>
+          <p class="loadmsg" id="loadMsg"></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button id="recalBtn" class="btn" disabled>⟳ Recalibrate head pose</button>
+      <button id="muteBtn" class="btn" disabled>🔊 Buzzer on</button>
+      <label class="switch"><input type="checkbox" id="phoneChk" checked disabled /><span>Phone detection</span></label>
+    </div>
+
+    <p class="foot">
+      Green = alert · Yellow = mild · Red = drowsy / phone use. Eyes closed ≥ 2 s, a yawn,
+      high PERCLOS, a head-nod, or a phone in frame raises the alarm.
+      <br/>100% on-device · open the page on a phone or laptop and it uses that device's camera.
+    </p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
